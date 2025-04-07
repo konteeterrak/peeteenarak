@@ -1,0 +1,109 @@
+/* ทำให้หัวข้อแต่ละอันมีการเคลื่อนไหวเมื่อเข้ามา */
+h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  
+  /* เพิ่มแอนิเมชันให้หัวข้อ */
+  h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* เพิ่มการเลื่อนขึ้นจากล่างเมื่อ scroll */
+  section {
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  section p,
+  section ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  section ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  section ul li {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  
+  /* Footer style */
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+  
+  /* ทำให้การแสดงผลสวยงาม */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation Style */
+  nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+  }
+  
+  /* Header Style */
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* เพิ่มแอนิเมชันที่เลื่อนขึ้น */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .intro,
+  .hobbies,
+  .future-goals {
+    opacity: 0;  /* Hide initially */
+  }
+  
+  /* Animations with delay */
+  .intro {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .hobbies {
+    animation: fadeInUp 1s ease-out 0.5s forwards;  /* Delay */
+  }
+  
+  .future-goals {
+    animation: fadeInUp 1s ease-out 1s forwards;  /* Delay */
+  }
+  
+  
