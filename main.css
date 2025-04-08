@@ -1,205 +1,228 @@
+/* สไตล์พื้นฐาน */
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+/* Header */
+header {
+  background-color: #2d3a47; /* สีเข้มและลึกลับ */
+  color: #fff;
+  padding: 2rem 4rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 6px solid #361e19; /* เส้นขอบใต้ header */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1.2s ease-out;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้ข้อความ */
+}
+
+/* เมนู Navigation */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #ff6347; /* สีเปลี่ยนเมื่อ hover */
+  transform: translateY(-5px);
+}
+
+/* Animation ของ Header */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
   }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 1.5rem 2rem;
-    text-align: center;
-    position: relative;
-    animation: slideIn 1s ease-out; /* Animation เมื่อหน้าเว็บโหลด */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  100% {
+    transform: translateY(0);
   }
-  
-  header h1 {
-    font-size: 2.5rem;
-    margin: 0;
+}
+
+/* Main Section */
+main {
+  padding: 3rem 4rem;
+  margin-top: 3rem;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: moveUpDown 3s ease-in-out infinite;
+  border-top: 6px solid #3a150f;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
   }
-  
-  /* เพิ่มการเปลี่ยนสีพื้นหลังเมื่อ scroll */
-  header.scrolled {
-    background-color: #444; /* เปลี่ยนสีพื้นหลังเมื่อเลื่อน */
+  50% {
+    transform: translateY(-12px);
   }
-  
-  /* เพิ่มลูกเล่นเมื่อ hover ที่เมนู */
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-    transition: transform 0.3s ease, color 0.3s ease;
+  100% {
+    transform: translateY(0);
   }
-  
-  nav a:hover {
-    color: #ffcc00; /* เปลี่ยนสีเมื่อ hover */
-    transform: translateY(-5px); /* ขยับเล็กน้อย */
+}
+
+main:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ปุ่ม */
+button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #e5533f;
+  transform: scale(1.05);
+}
+
+/* เมนู Hamburger */
+.hamburger-container {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1000;
+}
+
+.hamburger {
+  font-size: 2.5rem;
+  cursor: pointer;
+  background-color: #2d3a47;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.hamburger:hover {
+  background-color: #ff6347;
+}
+
+/* เมนู Dropdown */
+.dropdown-menu {
+  position: fixed;
+  top: 3.5rem;
+  left: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+  border-radius: 12px;
+}
+
+.dropdown-menu a {
+  padding: 1.2rem 2rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  background: white;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background: #ff6347;
+  color: white;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu li a {
+  display: block;
+  color: #333;
+}
+
+/* Overlay background */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 500;
+  display: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: #2d3a47;
+  color: #fff;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer .animated-image {
+  width: 180px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: floatIn 1s ease-out forwards;
+  animation-delay: 1s;
+}
+
+footer .animated-image:hover {
+  transform: scale(1.1);
+}
+
+footer .footer-text {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: floatIn 1s ease-out forwards;
+  animation-delay: 1.3s;
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Animation ของ Header */
-  @keyframes slideIn {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  /* เปลี่ยนสี header เมื่อ scroll */
-  body.scrolled header {
-    background-color: #222;
-  }
-  
-  main {
-    padding: 3rem;
-    margin-top: 2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    animation: moveUpDown 2s ease-in-out infinite;
-  }
-  @keyframes moveUpDown {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  /* เปลี่ยนเมื่อ hover */
-  main:hover {
-    transform: translateY(-5px); /* ขยับเล็กน้อยเมื่อ hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  }
-  
-  button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  .hamburger-container {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1000;
-  }
-  
-  .hamburger {
-    font-size: 2rem;
-    cursor: pointer;
-    background-color: #333;
-    color: white;
-    padding: 0.5rem 0.8rem;
-    border-radius: 5px;
-  }
-  
-  /* เมนู dropdown */
-  .dropdown-menu {
-    position: fixed;
-    top: 3.5rem;
-    left: 1rem;
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    display: none;
-    flex-direction: column;
-    z-index: 999;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .dropdown-menu a {
-    padding: 1rem;
-    text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #eee;
-    background: white;
-    transition: background 0.2s;
-  }
-  
-  .dropdown-menu a:hover {
-    background: #f5f5f5;
-  }
-  
-  /* Overlay background */
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3);
-    z-index: 500;
-    display: none;
-  }
-  footer {
-    margin-top: 3rem;
-    text-align: center;
-    padding-bottom: 2rem;
-  }
-  
-  .animated-image {
-    width: 150px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: floatIn 1s ease-out forwards;
-    animation-delay: 1s;
-  }
-  
-  .animated-image:hover {
-    transform: scale(1.05);
-  }
-  
-  .footer-text {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #333;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: floatIn 1s ease-out forwards;
-    animation-delay: 1.3s;
-  }
-  
-  @keyframes floatIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Animation */
-  @keyframes floatIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* 🎬 Animation */
-  @keyframes fadeSlideIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  /* เพิ่มการจัดระเบียบระยะห่างในเนื้อหาของหน้า */
+}
+
+/* เพิ่มลูกเล่นเมื่อเลื่อนหน้า */
+body.scrolled header {
+  background-color: #232f3b; /* สีเข้มขึ้นเมื่อเลื่อน */
+}

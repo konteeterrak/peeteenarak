@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ถอดรหัสเพื่อเอาคำใบ้ที่ 2</title>
+  <link rel="stylesheet" href="main.css">
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value.trim();
+      const correctCode = "lovenong"; // เปลี่ยนรหัสตรงนี้ได้
+
+      if (input === correctCode) {
+        window.location.href = "secret.html"; // ถ้าถูกจะไปหน้า secret.html
+      } else {
+        alert("รหัสผิดอะ ลองใหม่อีกทีน้าาา💔");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>ลองถอดรหัสดู</h1>
+    <p>ใครถอดได้เก่งมากอะะ😉</p>
+  </header>
+  <main>
+    <input type="text" id="codeInput" placeholder="ใส่รหัสลับที่นี่..." />
+    <button onclick="checkCode()">กดถอดรหัส</button>
+  </main>
+</body>
+</html>
